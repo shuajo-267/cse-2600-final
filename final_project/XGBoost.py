@@ -4,8 +4,6 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.pipeline import Pipeline
 from xgboost import XGBRegressor
-from sklearn.metrics import mean_squared_error
-from sklearn.metrics import r2_score
 import random
 import time
 from datetime import datetime
@@ -142,10 +140,7 @@ while True:
         learning_rate_range /= 2
         subsample_range /= 2
         colsample_bytree_range /= 2
-        if max_depth_range > 1:
-            max_depth_range /= 2
-        else:
-            max_depth_range = 0
+        max_depth_range = max(1, max_depth_range // 2)
 
         for target in targets:
             n_estimators_current[target] = n_estimators_best[target]
