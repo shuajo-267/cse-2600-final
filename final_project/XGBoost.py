@@ -12,7 +12,7 @@ from datetime import datetime
 
 random.seed(1993)
 
-df = pd.read_csv('water_pollution_disease_fixed_column_titles.csv')
+df = pd.read_csv('final_project\\water_pollution_disease_fixed_column_titles.csv')
 
 targets = [
     "Diarrheal Cases per 100,000 people",
